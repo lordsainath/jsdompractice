@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="gsap.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+#main {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    position: relative;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    /* flex-direction: row; */
+
+}
+
+
+
+
+#nav {
+    width: 100%;
+    height: 7vh;
+    font-size: 18px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5vh 2vh;
+    text-transform: uppercase;
+    
+    
+}
+
+#nav h3 {
+    /* width: 20%; */
+    position: relative;
+    z-index: 15;
+   
+
+}
+
+#main ol {
+    /* width: 20%; */
+    position: relative;
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    justify-content: space-between;
+    gap: 50px;
+    z-index: 15;
+}
+
+#main h1 {
+    font-size: 150px;
+    text-transform: uppercase;
+    font-weight: 400;
+    line-height: 120px;
+    z-index: 15;
+    position: relative;
+    
+    width: 80%;
+    margin-left: 18%;
+}
+
+#main h1:nth-child(2) {
+    margin-top: 150px;
+    z-index: 15;
+}
+#main h1:nth-child(3) {
+    text-align: center;
+    z-index: 15;
+}
+#main h1:nth-child(4) {
+    text-align: center;
+    z-index: 15;
+}
+
+img {
+  
+    position: absolute;
+    top:-5%;
+    left: 40%;
+    /* transform: translate(-50%,-50%); */
+}
+
+#image2 {
+    rotate: 20deg;
+}
+
+#image3 {
+    rotate: -30deg;
+}
+    </style>
+</head>
+<body>
+    
+
+       <div id="main">
+        <div id="nav">
+            <h3>Fransisco Gioia</h3>
+
+            <ol>
+                <li id="ni1">Instgram</li>
+                <li id="ni2">Gallery</li>
+                <li id="ni3">Contact</li>
+            </ol>
+
+        </div>
+
+        <h1>Hello I'm</h1>
+        <h1>Fransisco</h1>
+        <h1>Gioia</h1>
+        <img  id="image1" src="./stackphoto.avif" alt="">
+        <img  id="image2" src="./stackphoto.avif" alt="">
+        <img  id="image3" src="./stackphoto.avif" alt="">
+       </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var tl = gsap.timeline()
+
+
+// tl.from("#nav",{
+//     y:-50,
+//     duration:1,
+//     ease:"bounce.out",
+// })
+
+// tl.from("#ni1",{
+//     y:-50,
+//     duration:1,
+//     ease:"bounce.out",
+// })
+// tl.from("#ni2",{
+//     y:-50,
+//     duration:1,
+//     ease:"bounce.out",
+// })
+// tl.from("#ni3",{
+//     y:-50,
+//     duration:1,
+//     ease:"bounce.out",
+// })
+
+tl.from("#nav h3",{
+    y:-50,
+    duration:1,
+    ease:"bounce.out",
+})
+
+tl.from("ol li",{
+    y:-50,
+    duration:1,
+    ease:"bounce.out",
+   
+    stagger:1
+})
+
+tl.from("h1",{
+    x:-5000,
+    duration:0.5,
+    ease:"power.in",
+    stagger:1,
+    opacity:0,
+    
+})
+
+tl.from("img",{
+    x:100,
+    opacity:0,
+    scale:0.5,
+    stagger:1
+})
+
+    </script>
+    <script src="gsap.js"></script>
+</body>
+</html>
