@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="loco.css">
+    <style>
+       #page2  #image-div {
+            height: 100%;
+            width: 50%;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            
+        }
+        #image-div img {
+            width: 50%;
+            height: 50%;
+            object-fit: cover;
+        }
+    </style>
+  </head>
+  <body>
+
+
+    <div id="main">
+      <div id="page1"></div>
+      <div id="page2">
+        <div id="image-div">
+            <img data-scroll data-scroll-speed="-2" src="../Resources/stackphoto.avif" alt="">
+        </div>
+      </div>
+      <div id="page3"></div>
+    </div>
+
+    
+        <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+        <script src="loco.js"></script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+
+  #page1 {
+    width: 100%;
+    height: 100vh;
+    background-color: beige;
+  }
+  #page2 {
+    width: 100%;
+    height: 100vh;
+    background-color: antiquewhite;
+  }
+  #page3 {
+    width: 100%;
+    height: 100vh;
+    background-color: lightblue;
+  }
