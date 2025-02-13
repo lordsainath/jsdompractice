@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+</head>
+<body class="py-2 px-2">
+    
+    <p class="headingtext">Hello Sainath</p>
+    <button id="changebtn" class="bg-yellow-400 rounded-md py-1 px-1 cursor-pointer border">Change Text</button>
+<br>
+
+
+<img id="img1" class="w-[300px]" src="https://images.pexels.com/photos/303383/pexels-photo-303383.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+         <img id="img2" class="w-[300px]" src="https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+
+    <button id="swapbtn" class="border rounded-md p-1 mt-2 bg-zinc-400 text-white border-black cursor-pointer">Swap Images</button>
+
+
+    <form action="">
+        <input id="username" class="outline-none border rounded-md px-1 mt-1" type="text" name="" placeholder="username" id="">
+        <input id="email" class="outline-none border rounded-md px-1 mt-1" type="email" name="" placeholder="Enter your email" id="">
+        <input id="pwd" class="outline-none border rounded-md px-1 mt-1" type="password" name="" placeholder="Enter your password" id="">
+        <input id="submitbtn" type="submit" class="border px-1 text-md bg-red-200 rounded-lg py-1 cursor-pointer" value="Submit">
+    </form>
+
+
+    <p id="items"> </p>
+    <button id="getitem" class="border rounded-md p-1 mt-2 bg-zinc-400 text-white border-black cursor-pointer">get session storage data</button>
+
+
+
+
+
+
+    <script>
+       
+        var changebtn = document.querySelector("#changebtn");
+        var headingtext = document.querySelector(".headingtext");
+        changebtn.addEventListener("click",()=>{
+            headingtext.textContent += " Welcome To the Js DOM"    
+        })
+        var img1 = document.querySelector("#img1");
+        var img2 = document.querySelector("#img2")
+
+        document.querySelector("#swapbtn").addEventListener('click',()=>{
+            console.log("hello")
+            var temp = img1.src;
+            img1.src = img2.src
+            img2.src = temp;
+            // img1.src = "https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&w=600" 
+            // img2.src = "https://images.pexels.com/photos/303383/pexels-photo-303383.jpeg?auto=compress&cs=tinysrgb&w=600"
+
+        })
+        var username = document.querySelector('#username')
+        var email = document.querySelector('#email')
+        var pwd = document.querySelector('#pwd')
+        var submitform = document.querySelector("form")
+        submitform.addEventListener('submit',(e)=>{
+            e.preventDefault();
+            if(username.value === ''){
+                console.log("please fill the form ")
+            }
+            console.log("hello")
+            sessionStorage.setItem("username",username.value)
+            sessionStorage.setItem("email",email.value)
+            sessionStorage.setItem("password",pwd.value)
+            console.log(username.value)
+            console.log(email.value)
+            console.log(pwd.value)
+        })
+
+        var p1 =   document.querySelector('#items')
+        document.querySelector('#getitem').addEventListener('click',()=>{
+        
+           var data = sessionStorage.getItem("username")
+           var emaildata = sessionStorage.getItem('email')
+          p1.textContent = "Username = " +  data
+          p1.textContent += " Email = " + emaildata
+          p1.textContent += " Password = " + sessionStorage.getItem('password')
+        })
+
+
+
+    </script>
+</body>
+</html>
